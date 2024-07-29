@@ -264,7 +264,7 @@ public class HTTPSession implements IHTTPSession {
                     parms.put(partName, values);
                 }
 
-                if (partContentType == null) {
+                if (partContentType == null || partContentType.contains("text/plain") ) {
                     // Read the part into a string
                     byte[] data_bytes = new byte[partDataEnd - partDataStart];
                     fbuf.get(data_bytes);
